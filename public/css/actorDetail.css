@@ -1,0 +1,70 @@
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #e0f7fa;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+figure {
+    margin: 20px 0;
+}
+
+img{
+    width: 20%;
+  }
+
+h1 {
+    text-align: center;
+    color: #00796b;
+}
+
+p {
+    text-align: center;
+    font-size: 18px;
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin: 5px;
+}
+
+.botonModificar {
+    background-color: #00796b;
+}
+
+.botonModificar:hover {
+    background-color: #004d40;
+}
+
+.botonBorrar {
+    background-color: #d32f2f;
+}
+
+.botonBorrar:hover {
+    background-color: #b71c1c;
+}
+
+.botonAgregar {
+    background-color: #0288d1;
+}
+
+.botonAgregar:hover {
+    background-color: #01579b;
+}
+
+.botonVolver {
+    background-color: #9e9e9e; 
+}
+
+.botonVolver:hover {
+    background-color: #616161;
+}
+
+.button-section {
+    text-align: center;
+    margin-top: 20px;
+}

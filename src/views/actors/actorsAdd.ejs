@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agregar Actor</title>
+    <link rel='stylesheet' href='/css/actorAdd.css' />
+
+</head>
+<body>
+    <figure>
+        <img src="/img/logo-DH.png" alt="Logo Digital House">
+      </figure>
+    <form action="/actors/create" method="POST">
+        <div>
+            <label for="first_name">Nombre:</label>
+            <input type="text" name="first_name" id="first_name" value="<%= oldData && oldData.first_name ? oldData.first_name : '' %>">
+            <%= errors && errors.find(error => error.param === 'first_name') ? '<p>' + errors.find(error => error.param === 'first_name').msg + '</p>' : '' %>
+        </div>
+        <div>
+            <label for="last_name">Apellido:</label>
+            <input type="text" name="last_name" id="last_name" value="<%= oldData && oldData.last_name ? oldData.last_name : '' %>">
+            <%= errors && errors.find(error => error.param === 'last_name') ? '<p>' + errors.find(error => error.param === 'last_name').msg + '</p>' : '' %>
+        </div>
+        <div>
+            <label for="rating">Rating:</label>
+            <input type="number" name="rating" id="rating" value="<%= oldData && oldData.rating ? oldData.rating : '' %>" step="0.1" min="0" max="10">
+            <%= errors && errors.find(error => error.param === 'rating') ? '<p>' + errors.find(error => error.param === 'rating').msg + '</p>' : '' %>
+        </div>
+        <div>
+            <label for="favorite_movie_id">Película Favorita:</label>
+            <select name="favorite_movie_id" id="favorite_movie_id">
+                <% movie.forEach(m => { %>
+                    <option value="<%= m.id %>" <%= oldData && oldData.favorite_movie_id == m.id ? 'selected' : '' %>><%= m.title %></option>
+                <% }); %>
+            </select>
+            <%= errors && errors.find(error => error.param === 'favorite_movie_id') ? '<p>' + errors.find(error => error.param === 'favorite_movie_id').msg + '</p>' : '' %>
+        </div>
+        <button type="submit">Agregar Actor</button>
+    </form>
+</body>
+</html>
